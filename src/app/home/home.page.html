@@ -1,0 +1,98 @@
+ <ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>WeatherApp
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search" [(ngModel)]="city">
+        <button type="submit" (click)="submit(city)">submit</button>
+      </form>
+    </div>
+
+<ion-content class="background-image">
+
+
+<ion-card>
+ <div *ngFor="let item of WeatherData">
+
+  
+    </div> 
+    <ion-slides>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+              <div class="weather">
+                  <div class="current">
+                    <div class="info">
+                      <div>&nbsp;</div>
+                      <div class="city">{{list?.city.name}}</div>
+                      <div class="temp">{{list?.list[0].main.temp | number: '1.0-0'}}&deg; <small>F</small></div>
+                      <div class="wind"><small><small>{{list?.list[0].weather[0].description}}</small></small>{{list?.list[0].wind.speed}}</div>
+                      <img src="http://openweathermap.org/img/w/{{list?.list[0].weather[0].icon}}.png" class="image1">
+                      <div>&nbsp;</div>
+                      </div>
+                     
+                  </div>
+                  <div class="future">
+                      <div class="day">
+                          <h5>{{list?.list[5].dt_txt | date: 'EE'}}</h5>
+                           <img src="http://openweathermap.org/img/w/{{list?.list[5].weather[0].icon}}.png" class="image">
+                           <h6>{{list?.list[5].dt_txt | date: 'dd MMM yyy hh:mm:ss a'}}</h6>
+                           <div class="degree">Max:&nbsp;{{list?.list[5].main.temp_max}}<sup>o</sup>C</div>
+                           <small>minimum:&nbsp;{{list?.list[5].main.temp_min}}<sup>o</sup>C</small>
+                      </div>
+                      <div class="day">
+                          <h5>{{list?.list[10].dt_txt | date: 'EEE'}}</h5>
+                           <img src="http://openweathermap.org/img/w/{{list?.list[10].weather[0].icon}}.png" class="image">
+                           <h6>{{list?.list[10].dt_txt | date: 'dd MMM yy hh:mm:ss a'}}</h6>
+                           <div class="degree">Max:&nbsp;{{list?.list[10].main.temp_max}}<sup>o</sup>C</div>
+                          <small>min:&nbsp;{{list?.list[15].main.temp_min}}<sup>o</sup>C</small>
+                      </div>
+                      <div class="day">
+                          <h5>{{list?.list[15].dt_txt | date: 'EEE'}}</h5>
+                          <img src="http://openweathermap.org/img/w/{{list?.list[15].weather[0].icon}}.png" class="image">
+                          <h6>{{list?.list[15].dt_txt | date: 'dd MMM yyy hh:mm:ss a'}}</h6>
+                          <div class="degree">Max:&nbsp;{{list?.list[15].main.temp_max}}<sup>o</sup>C</div>
+                         <small>min:&nbsp;{{list?.list[15].main.temp_min}}<sup>o</sup>C</small>
+                      </div>
+                      <div class="day">
+                          <h5>{{list?.list[25].dt_txt | date: 'EEE'}}</h5>
+                          <img src="http://openweathermap.org/img/w/{{list?.list[25].weather[0].icon}}.png" class="image">
+                          <h6>{{list?.list[25].dt_txt | date: 'dd MMM yy hh:mm:ss a'}}</h6>
+                          <div class="degree">Max:&nbsp;{{list?.list[25].main.temp_max}}<sup>o</sup>C</div>
+                         <small>min:&nbsp;{{list?.list[25].main.temp_min}}<sup>o</sup>C</small>
+                    </div>
+                    <div class="day">
+                      <h5>{{list?.list[30].dt_txt | date: 'EEE'}}</h5>
+                      <img src="http://openweathermap.org/img/w/{{list?.list[30].weather[0].icon}}.png" class="image">
+                      <h6>{{list?.list[30].dt_txt | date: 'dd MMMM yyyy hh:mm:ss a'}}</h6>
+                      <div class="degree">Max:&nbsp;{{list?.list[30].main.temp_max}}<sup>o</sup>C</div>
+                <small>min:&nbsp;{{list?.list[30].main.temp_min}}<sup>o</sup>C</small>
+                  </div>
+                  <div class="day">
+                      <h5>{{list?.list[38].dt_txt | date: 'EEE'}}</h5>
+                      <img src="http://openweathermap.org/img/w/{{list?.list[38].weather[0].icon}}.png" class="image">
+                      <h6>{{list?.list[38].dt_txt | date: 'dd MMM yy hh:mm:ss a'}}</h6>
+                      <div class="degree">Max:&nbsp;{{list?.list[38].main.temp_max}}<sup>o</sup>C</div>
+                     <small>min:&nbsp;{{list?.list[38].main.temp_min}}<sup>o</sup>C</small>
+                </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</ion-slides> 
+<ion-grid>
+    <ion-row>
+      <ion-col width=100> 
+
+   </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-card>
+</ion-content> 
+
